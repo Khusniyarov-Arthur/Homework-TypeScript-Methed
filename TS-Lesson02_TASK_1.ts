@@ -1,10 +1,10 @@
-type user = {
+type userL2T1 = {
   name: string,
   age: number,
   group: string,
 };
 
-const persons: user[] = [
+const personsL2T1: userL2T1[] = [
   {
     name: 'Иван Петров',
     age: 27,
@@ -32,10 +32,10 @@ const persons: user[] = [
   }
 ];
 
-const logPerson = (user: user) => {
-  console.log(`${user.name}, ${user.age}`);
+const logPersonL2T1 = (userL2T1: userL2T1) => {
+  console.log(`${userL2T1.name}, ${userL2T1.age}`);
 }
 
 console.log('Users:');
-persons.forEach(logPerson);
+personsL2T1.forEach(logPersonL2T1);
 

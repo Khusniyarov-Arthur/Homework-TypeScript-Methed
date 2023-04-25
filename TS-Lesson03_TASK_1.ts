@@ -1,19 +1,19 @@
-type UserL2T2 = {
+interface UserL3T1  {
   name: string,
   age: number,
   group: string,
 };
 
 
-type AdminL2T2 = {
+interface AdminL3T1 {
   name: string;
   age: number;
   role: string;
 }
 
-type PersonL2T2 = UserL2T2 | AdminL2T2;
+type PersonL3T1 = UserL3T1 | AdminL3T1;
 
-const personsL2T2: PersonL2T2[] = [
+const personsL3T1: PersonL3T1[] = [
   {
     name: 'Иван Петров',
     age: 27,
@@ -40,12 +40,21 @@ const personsL2T2: PersonL2T2[] = [
     role: 'Администратор',
   }
 ];
-// В изначальном примере было именно так, 
-// но с типом User будет ошибка, поэтому я его заменил на Person. 
-// Либо пример ошибочный, либо я не верно выполнил задание
-// const logPersonL2T2 = (user: User) => {
-const logPersonL2T2 = (userL2T2: PersonL2T2) => {
-  console.log(`${userL2T2.name}, ${userL2T2.age}`);
+
+// const logPerson = (user: Person) => {
+//   console.log(`${user.name}, ${user.age}`);
+// };
+
+// persons.forEach(logPerson);
+
+const logPersonL3T1 = (personL3T1: PersonL3T1) => {
+  let information: string;
+  if ('role' in personL3T1) {
+    information = personL3T1.role;
+  } else {
+    information = personL3T1.group;
+  }
+  console.log(`${personL3T1.name}, ${personL3T1.age}, ${information}`);
 };
 
-personsL2T2.forEach(logPersonL2T2);
+personsL3T1.forEach(logPersonL3T1);
