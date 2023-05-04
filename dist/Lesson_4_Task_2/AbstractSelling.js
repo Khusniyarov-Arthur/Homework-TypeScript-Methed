@@ -17,7 +17,8 @@ class AbstractSelling {
     set amount(amount) {
         this._amount = amount;
     }
-    compare() {
+    compare(item) {
+        return this._product.price - item._product.price;
     }
 }
 exports.AbstractSelling = AbstractSelling;

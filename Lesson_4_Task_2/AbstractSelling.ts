@@ -21,10 +21,9 @@ export abstract class AbstractSelling {
     this._amount = amount;
   }
 
-  compare() {
-
+  compare(item: AbstractSelling) {
+    return this._product.price - item._product.price
   }
-
   abstract getPrice(): number;
 
 }
